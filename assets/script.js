@@ -67,3 +67,19 @@ for (let i = 0; i < slides.length; i++) {
 
 //Récupération des class ".dot" des <span>
 const dots = document.querySelectorAll(".dot");
+
+// Mise à jour bullet points
+function updateDots(index) {
+  dots.forEach((dot) => {
+    dot.classList.remove("dot_selected");
+  });
+  dots[index].classList.add("dot_selected");
+}
+
+console.log(updateDots(0));
+
+// Mise à jour img et text
+function updateSlide(index = 0) {
+  bannerImage.setAttribute("src", "./assets/images/slideshow/" + slides[index].image);
+  bannerText.innerHTML = slides[index].tagLine;
+}
