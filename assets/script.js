@@ -55,3 +55,15 @@ arrowRight.addEventListener("click", () => {
   updateSlide(currentSlideIndex);
   updateDots(currentSlideIndex);
 });
+
+// Bullet points
+const numberOfDots = slides.length;
+for (let i = 0; i < slides.length; i++) {
+  const dot = document.createElement("span");
+  dot.classList.add("dot");
+  dot.addEventListener("click", () => updateSlide(i));
+  dotsContainer.appendChild(dot);
+}
+
+//Récupération des class ".dot" des <span>
+const dots = document.querySelectorAll(".dot");
