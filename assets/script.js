@@ -23,3 +23,35 @@ const arrowRight = document.querySelector(".arrow_right");
 const dotsContainer = document.querySelector(".dots");
 const bannerImage = document.querySelector(".banner-img");
 const bannerText = document.querySelector("#banner p");
+
+// Initialisation de la diapositive actuelle
+let currentSlideIndex = 0;
+
+updateSlide();
+
+//  Event listener flèche gauche
+arrowLeft.addEventListener("click", () => {
+  console.log("J'ai cliqué sur la flèche gauche");
+  currentSlideIndex--; // Décrémentez l'index de la diapositive actuelle
+
+  if (currentSlideIndex < 0) {
+    // Vérifiez si l'index est inférieur à 0
+    currentSlideIndex = slides.length - 1; // Si c'est le cas, revenez à la dernière diapositive
+  }
+
+  updateSlide(currentSlideIndex);
+  updateDots(currentSlideIndex);
+});
+
+// Event listener flèche droite
+arrowRight.addEventListener("click", () => {
+  console.log("J'ai cliqué sur la flèche droite");
+  currentSlideIndex++; // Incrémentez l'index de la diapositive actuelle
+
+  if (currentSlideIndex === slides.length) {
+    currentSlideIndex = 0; // Si c'est le cas, revenez à la première diapositive
+  }
+
+  updateSlide(currentSlideIndex);
+  updateDots(currentSlideIndex);
+});
