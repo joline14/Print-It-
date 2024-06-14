@@ -25,9 +25,9 @@ const bannerImage = document.querySelector(".banner-img");
 const bannerText = document.querySelector("#banner p");
 
 // Initialisation de la diapositive actuelle
-let currentSlideIndex = 0;
+let currentSlideIndex = 0; // variable affiche en premier la première diapositive du tableau slides
 
-updateSlide();
+updateSlide(); //fonction pour mettre à jour le contenu visuel du carrousel,
 
 //  Event listener flèche gauche
 arrowLeft.addEventListener("click", () => {
@@ -52,7 +52,7 @@ arrowRight.addEventListener("click", () => {
     currentSlideIndex = 0; // Si c'est le cas, revenez à la première diapositive
   }
 
-  updateSlide(currentSlideIndex);
+  updateSlide(currentSlideIndex); //pour mettre à jour l'affichage
   updateDots(currentSlideIndex);
 });
 
@@ -71,9 +71,9 @@ const dots = document.querySelectorAll(".dot");
 // Mise à jour bullet points
 function updateDots(index) {
   dots.forEach((dot) => {
-    dot.classList.remove("dot_selected");
+    dot.classList.remove("dot_selected"); // enleve class "dot_selected" de chaque dot
   });
-  dots[index].classList.add("dot_selected");
+  dots[index].classList.add("dot_selected"); // uniquement au dot qui correspond à l'index de la diapositive actuelle
 }
 
 console.log(updateDots(0));
